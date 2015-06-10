@@ -15,6 +15,7 @@ class MenuController
      	puts "3 - Search for an entry"
      	puts "4 - Import entries from a CSV"
      	puts "5 - Exit"
+      puts "6 - DEMOLISH ALL ENTRIES"
      	print "Enter your selection: "
  
     	selection = gets.to_i
@@ -39,8 +40,13 @@ class MenuController
        		main_menu
      	when 5
        		puts "Good-bye!"
-
-       		exit(0)
+          exit(0)
+      when 6
+          @address_book.entries.each do |entry|
+              system "clear"
+              puts entry.to_s
+              delete_entry(entry)
+          end
      	else
        		system "clear"
        		puts "Sorry, that is not a valid input"
