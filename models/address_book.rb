@@ -23,7 +23,7 @@ class AddressBook
   end
 
   def remove_entry(entry)
-    @entires =[]
+    @entries =[]
     entries.pop
   end
 
